@@ -1,77 +1,162 @@
-# Cloud-Native College Event Registration System
+# 🎓 College Event Registration System
 
-## Project Overview
-This project is a simple and functional cloud-native web application for student registration in university events such as Tech Fest, Cultural Events, Workshops, and seminars.
+## 📌 Project Overview
 
-The project is implemented in two parts:
+This project is a web-based College Event Registration System that allows students to register for various events. The application provides a user-friendly interface for submitting registration details and viewing all registrations.
 
-1. **Working Prototype (Implemented & Deployed)**
-   - Local Prototype: Flask + SQLite
-   - Cloud Demo: Flask + SQLite deployed on Render
-   - Purpose: Demonstrates end-to-end functionality with a public URL
-
-2. **Proposed GCP Cloud-Native Serverless Version**
-   - Backend: Google Cloud Functions (Python)
-   - Database: Google Cloud Firestore
-   - Frontend: HTML/CSS/JavaScript calling Cloud Function
-   - Purpose: Matches faculty requirement for a serverless Google Cloud solution
+The project demonstrates both a **local prototype** and a **cloud-deployed application**, along with a **cloud-ready architecture for Google Cloud Platform (GCP)**.
 
 ---
 
-## Features
-- Student event registration through a web form
-- Fields:
-  - Full Name
-  - Department
-  - Batch
-  - KU ID
-  - Enrollment Number
-  - Event Name
-- Attractive and user-friendly UI
-- Registration success confirmation
-- View all registrations page (local prototype)
-- Cloud-native architecture ready for future integration
+## 🚀 Features
+
+* 🎨 Attractive pastel-themed user interface
+* 📝 Student registration form
+* 📋 View all registrations page
+* 🗂️ Multiple input fields (Name, Department, Batch, KU ID, Enrollment Number)
+* 🌐 Publicly accessible web application
 
 ---
 
-## Tech Stack
+## 🛠️ Technologies Used
 
-### Local Prototype
-- Python
-- Flask
-- SQLite
+### Frontend
 
-### Cloud Demo (Current Live Version)
-- Flask
-- SQLite
-- Render (public hosting)
-- GitHub
+* HTML
+* CSS (Pastel UI design)
 
-### Proposed Official Cloud-Native GCP Version
-- Google Cloud Functions
-- Google Cloud Firestore
-- HTML/CSS/JavaScript frontend
+### Backend
+
+* Python (Flask)
+
+### Database
+
+* SQLite (local database for prototype and deployment)
+
+### Deployment
+
+* Cloud platform: Render
+
+### Cloud-Ready Configuration
+
+* Docker
+* Google Cloud Build
+* Google Cloud Run (proposed)
 
 ---
 
-## Project Structure
+## 💻 Local Setup Instructions
 
-```text
-College_Event_Registration/
+### Step 1: Clone the repository
+
+```
+git clone <your-repo-link>
+cd Local-App
+```
+
+### Step 2: Install dependencies
+
+```
+pip install -r requirements.txt
+```
+
+### Step 3: Run the application
+
+```
+python app.py
+```
+
+### Step 4: Open in browser
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+## ☁️ Live Deployment
+
+The application is deployed on Render and is publicly accessible.
+
+🔗 **Live URL:**
+https://cloud-event-registration-app-gehna7.onrender.com
+
+---
+
+## 🧱 Project Structure
+
+```
+Local-App/
 │
-├── README.md
+├── app.py
+├── init_db.py
+├── requirements.txt
+├── Dockerfile
+├── cloudbuild.yaml
+├── gcp_setup_guide.md
 ├── .gitignore
-│
-├── local-prototype/
-│   ├── app.py
-│   ├── requirements.txt
-│   └── registrations.db
-│
-├── gcp-cloud-function/
-│   ├── main.py
-│   ├── requirements.txt
-│   └── sample_frontend.html
-│
-├── docs/
-│   ├── architecture-diagram.txt
-│   └── ppt-content.txt
+└── README.md
+```
+
+---
+
+## ☁️ Proposed Google Cloud Architecture
+
+Although the current deployment is on Render, the application is designed to be deployed on Google Cloud Platform using serverless technologies.
+
+### Proposed Services:
+
+* Google Cloud Run → for hosting the web application (serverless)
+* Google Cloud Build → for building container images
+* Firestore / Cloud SQL → for cloud database storage
+
+---
+
+## 🔄 Migration to Google Cloud (Concept)
+
+To migrate this application to GCP:
+
+1. Containerize the application using Dockerfile
+2. Use Cloud Build to build and push the container image
+3. Deploy the container to Cloud Run
+4. Replace SQLite with Firestore or Cloud SQL for persistent cloud storage
+
+---
+
+## 📊 Cloud Concepts Demonstrated
+
+* 🌍 Public accessibility through cloud deployment
+* 📈 Scalability using serverless architecture (Cloud Run)
+* 🔄 Reliability through managed cloud services
+* 📦 Containerization using Docker
+
+---
+
+## ⚠️ Current Limitations
+
+* SQLite database is not suitable for long-term cloud persistence
+* Current deployment is not fully serverless
+* Cloud database integration is proposed but not implemented
+
+---
+
+## 📚 Future Improvements
+
+* Integration with Firestore or Cloud SQL
+* Authentication system (login/signup)
+* Admin dashboard
+* Export data (CSV/Excel)
+
+---
+
+## 👩‍💻 Author
+
+* Name: Gehna Upadhyay
+* Course: B.Tech. CSE - DS (Hons.)
+* Semester: 2nd Semester
+
+---
+
+## 📌 Conclusion
+
+This project successfully demonstrates a working web application with cloud deployment and a clear migration path to Google Cloud Platform, fulfilling both functional and conceptual cloud computing requirements.
